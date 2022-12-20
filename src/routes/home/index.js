@@ -1,18 +1,27 @@
 import { h } from 'preact';
-import sizeof from 'firestore-size'
-import {useState} from "preact/hooks";
-import bytes from "bytes"
+import {useState, useCallback} from "preact/hooks";
+
+import CodeMirror from '@uiw/react-codemirror';
+import { javascript } from '@codemirror/lang-javascript';
+import DisplaySize from "../../components/display-size";
+import NameCalculator from "../../components/name-calculator";
+
 
 
 const Home = () => {
 
-	const [code, setCode] = useState()
+	const [code, setCode] = useState(null)
+
+	const onChange = useCallback((value, viewUpdate) => {
+		setCode(null)
+		console.log(eval(value))
+		const codeValue = JSON.parse(`"${value}"`)
+		console.log(codeValue);
+		setCode(codeValue)
+
+	}, []);
 
 
-	const handleTextAreaChange = (event) => {
-		setCode(event.target.value)
-		console.log(event.target.value)
-	}
 
 	return (
 		<div style={{padding: 25}}>
@@ -21,10 +30,19 @@ const Home = () => {
 				<h3>Calculates the size of size of your document in the Firestore DB.</h3>
 				<h3>Based on <a href={"https://www.npmjs.com/package/firestore-size"} target={"_blank"}> firestore-size</a> package</h3>
 			</div>
+			<div style={{height: 250}}>
+				<NameCalculator/>
+			</div>
 			<div style={{height: "80vh"}}>
 				<div style={{width: "50%", float: "left", height: "90%", display: "block", paddingRight: 20}}>
 					<div>Paste your document</div>
-					<textarea onKeyUp={handleTextAreaChange} onChange={handleTextAreaChange} style={{width: "100%", height: "100%", resize: "none"}} />
+					<CodeMirror
+						value=""
+						height="600px"
+						extensions={[javascript()]}
+						onChange={onChange}
+					/>
+					{/*<textarea onKeyUp={handleTextAreaChange} onChange={handleTextAreaChange} style={{width: "100%", height: "100%", resize: "none"}} />*/}
 				</div>
 				<div  style={{width: "50%", float: "right", paddingLeft: 20}}>
 					<div style={{textAlign: "center"}}>
@@ -32,7 +50,7 @@ const Home = () => {
 						The size of the document would be approximately
 					</h2>
 					<h1>
-						{bytes(sizeof(code))}
+						<DisplaySize code={code} />
 					</h1>
 					</div>
 					<div>
