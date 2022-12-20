@@ -18,6 +18,9 @@
       "build/"
     ]
   },
+  "engines": {
+    "node": "16"
+  },
   "dependencies": {
     "@codemirror/lang-javascript": "^6.1.2",
     "@uiw/react-codemirror": "^4.19.4",
