@@ -1,8 +1,9 @@
 {
   "private": true,
   "name": "firestore-size-calculator",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "license": "MIT",
+  "homepage": "https://firestore-size-calculator.pages.dev/",
   "scripts": {
     "build": "preact build",
     "serve": "sirv build --port 8080 --cors --single",
