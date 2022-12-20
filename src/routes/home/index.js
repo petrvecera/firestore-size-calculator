@@ -17,7 +17,7 @@ const Home = () => {
   return (
     <div style={{ padding: 10, maxWidth: 1800, margin: "auto" }}>
       <div style={{ textAlign: "center" }}>
-        <h1>Firestore Object Size Calculator</h1>
+        <h1>Firestore Document Size Calculator</h1>
         <h3>Calculates the size of size of your document in the Firestore DB.</h3>
       </div>
       <div style={{ height: 250 }}>
