@@ -39,7 +39,7 @@ const Home = () => {
         </div>
         <div style={{ width: "50%", float: "right", paddingLeft: 20 }}>
           <div style={{ textAlign: "center" }}>
-            <h2>The size of the document would be approximately</h2>
+            <h2>The size of the document body would be approximately</h2>
             <h1>
               <DisplaySize code={code} />
             </h1>
