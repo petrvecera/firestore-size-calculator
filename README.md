@@ -1,22 +1,22 @@
-# firestore-size-web
+# Firestore Size Calculator
 
-## CLI Commands
+Homepage https://firestore-size-calculator.pages.dev/
+
+**Looking for contributors!**
+Feel free to post MR! Check out issues.
+
+### Development
+
+The app is build with PReact
 
 ```bash
 # install dependencies
-npm install
+yarn 
 
-# serve with hot reload at localhost:8080
-npm run dev
+# serve dev server on localhost:8080
+yarn dev 
 
-# build for production with minification
-npm run build
+# build server
+yarn build
 
-# test the production build locally
-npm run serve
-
-# run tests with jest and enzyme
-npm run test
 ```
-
-For detailed explanation on how things work, checkout the [CLI Readme](https://github.com/developit/preact-cli/blob/master/README.md).
