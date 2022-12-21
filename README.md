@@ -20,3 +20,5 @@ yarn dev
 yarn build
 
 ```
+
+Master is automatically deployed to the cloudflare website.
