@@ -35,7 +35,7 @@ const Home = () => {
         >
           <h3>Firestore Document body size</h3>
           <div>Paste your document</div>
-          <CodeMirror value="" height="450px" extensions={[javascript()]} onChange={onChange} />
+          <CodeMirror value="" height="350px" extensions={[javascript()]} onChange={onChange} />
         </div>
         <div style={{ width: "50%", float: "right", paddingLeft: 20 }}>
           <div style={{ textAlign: "center" }}>
