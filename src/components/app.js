@@ -1,5 +1,7 @@
-import { h } from "preact";
-import { Router } from "preact-router";
+import {h} from "preact";
+import {Router} from "preact-router";
+import GitHubForkRibbon from 'react-github-fork-ribbon';
+
 
 // Code-splitting is automated for `routes` directory
 import Home from "../routes/home";
@@ -7,7 +9,7 @@ import Home from "../routes/home";
 const App = () => (
   <div id="app">
     <Router>
-      <Home path="/" />
+      <Home path="/"/>
     </Router>
     <footer
       style={{
@@ -26,6 +28,11 @@ const App = () => (
         package
       </h3>
     </footer>
+    <GitHubForkRibbon href="https://github.com/petrvecera/firestore-size-calculator"
+                      target="_blank"
+                      position="right">
+      Fork me on GitHub
+    </GitHubForkRibbon>
   </div>
 );
 
